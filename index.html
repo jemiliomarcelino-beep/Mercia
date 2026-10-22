@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#170f22">
+  <title>Nosso Cantinho ❤️</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="background-shade"></div>
+  <aside class="sidebar">
+    <a class="brand" href="#inicio"><span class="brand-heart">♥</span><span><strong>Nosso Cantinho</strong><small>4 anos de nós 💗</small></span></a>
+    <nav>
+      <a class="nav-link active" href="#inicio">⌂ <span>Início</span></a>
+      <a class="nav-link" href="#fotos">▧ <span>Fotos</span></a>
+      <a class="nav-link" href="#cartas">✉ <span>Cartas</span></a>
+      <a class="nav-link" href="#historia">♡ <span>Nossa história</span></a>
+      <a class="nav-link" href="#mensagens">☁ <span>Mensagens</span></a>
+    </nav>
+    <p class="sidebar-quote">“Você é o meu lugar favorito no mundo.” <span>♥</span></p>
+    <div class="sidebar-bottom">Feito com amor, só para nós 💕</div>
+  </aside>
+
+  <main class="main-content">
+    <header class="topbar">
+      <span class="pill">💞 Um lugar só nosso</span>
+      <button class="ghost-button" id="editDateBtn" type="button">⚙ Editar data</button>
+    </header>
+
+    <section class="hero" id="inicio">
+      <div class="hero-content">
+        <p class="eyebrow">A nossa história é a minha favorita</p>
+        <h1>4 anos de amor<span> ♥</span></h1>
+        <p class="hero-copy">Quatro anos de risos, desafios, carinho e memórias inesquecíveis. E ainda é só o começo...</p>
+        <div class="counter" aria-live="polite">
+          <div><strong id="years">4</strong><span>anos</span></div>
+          <div><strong id="months">0</strong><span>meses</span></div>
+          <div><strong id="days">0</strong><span>dias</span></div>
+        </div>
+        <a class="primary-button" href="#cartas">♥ Escrever uma carta</a>
+      </div>
+      <div class="date-chip">📅 <span>Desde <strong id="startDateLabel">22/10/2022</strong></span></div>
+    </section>
+
+    <section class="section-card gallery-section" id="fotos">
+      <div class="section-heading">
+        <div><span class="section-icon">▧</span><div><h2>Galeria de memórias</h2><p>Os nossos momentos mais bonitos 📸</p></div></div>
+        <label class="primary-button small-button" for="photoInput">＋ Adicionar fotos</label>
+        <input id="photoInput" type="file" accept="image/*" multiple hidden>
+      </div>
+      <div id="photoGallery" class="photo-grid">
+        <div class="empty-state"><span>♡</span><p>As vossas memórias começam aqui.</p><small>Adiciona fotografias para encher este espaço de amor.</small></div>
+      </div>
+      <p class="hint">As fotografias ficam guardadas neste navegador. Para partilhá-las entre dispositivos, será necessário ligar o site a uma base de dados online.</p>
+    </section>
+
+    <section class="section-card letter-section" id="cartas">
+      <div class="section-heading">
+        <div><span class="section-icon">✉</span><div><h2>Escreve uma carta</h2><p>Diz tudo aquilo que o coração sente...</p></div></div>
+      </div>
+      <form id="letterForm">
+        <label for="letterTitle">Título da carta</label>
+        <input id="letterTitle" maxlength="80" placeholder="Ex.: Para o amor da minha vida" required>
+        <label for="letterText">A tua mensagem</label>
+        <textarea id="letterText" rows="6" placeholder="Meu amor, nestes quatro anos contigo aprendi que..." required></textarea>
+        <div class="form-footer"><span>♡ Cada palavra é uma parte da nossa história.</span><button class="primary-button" type="submit">➤ Guardar carta</button></div>
+      </form>
+      <div class="saved-letters"><h3>Cartas guardadas</h3><div id="lettersList" class="letters-list"><p class="muted">Ainda não guardaste nenhuma carta.</p></div></div>
+    </section>
+
+    <section class="section-card timeline-section" id="historia">
+      <div class="section-heading"><div><span class="section-icon">♡</span><div><h2>A nossa linha do tempo</h2><p>Pequenos momentos, grandes memórias</p></div></div></div>
+      <form id="momentForm" class="moment-form">
+        <input id="momentDate" type="date" aria-label="Data do momento" required>
+        <input id="momentTitle" maxlength="100" placeholder="Ex.: O nosso primeiro encontro" required>
+        <button class="primary-button small-button" type="submit">＋ Adicionar</button>
+      </form>
+      <div id="timeline" class="timeline"></div>
+    </section>
+
+    <section class="section-card messages-section" id="mensagens">
+      <div class="section-heading"><div><span class="section-icon">♥</span><div><h2>Mensagens especiais</h2><p>Palavras para aquecer o coração</p></div></div></div>
+      <div class="quote-list">
+        <blockquote>“Escolher-te continua a ser uma das minhas decisões favoritas.” <span>♥</span></blockquote>
+        <blockquote>“Não precisamos de dias perfeitos, só de continuar juntos.” <span>♡</span></blockquote>
+        <blockquote>“Quatro anos depois, ainda encontro mil motivos para te amar.” <span>♥</span></blockquote>
+      </div>
+    </section>
+
+    <footer>Nosso Cantinho <span>♥</span> <small>4 anos de amor e muitas histórias por escrever.</small></footer>
+  </main>
+
+  <dialog id="dateDialog">
+    <form id="dateForm" method="dialog">
+      <button class="close-dialog" type="button" id="closeDateDialog" aria-label="Fechar">×</button>
+      <h2>Quando começou o vosso amor? 💗</h2>
+      <p>Escolhe a data de início para atualizar a contagem.</p>
+      <label for="relationshipDate">Data de namoro</label>
+      <input id="relationshipDate" type="date" required>
+      <button class="primary-button" type="submit">Guardar data</button>
+    </form>
+  </dialog>
+  <div id="toast" class="toast" role="status"></div>
+  <script src="script.js"></script>
+</body>
+</html>
